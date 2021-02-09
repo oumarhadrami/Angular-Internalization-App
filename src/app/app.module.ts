@@ -8,9 +8,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LanguagePipe } from './pipes/language.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LanguagePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
