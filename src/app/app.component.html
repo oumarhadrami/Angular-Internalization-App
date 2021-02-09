@@ -7,7 +7,7 @@
       <select class="form-control" #selectedLang (change)="switchLang(selectedLang.value)">
         <option *ngFor="let language of translate.getLangs()" [value]="language"
           [selected]="language === translate.currentLang">
-          {{ language }}
+          {{ language  | uppercase}}
         </option>
       </select>
     </span>
@@ -46,7 +46,7 @@
       <input type="checkbox" class="form-check-input">
       <label class="form-check-label">{{'TermsConditions' | translate}}</label>
     </div>
-    <button type="submit" class="btn btn-block btn-danger">{{'Submit' | translate}}</button>
+    <button type="submit" class="btn btn-danger">{{'Submit' | translate}}</button>
   </form>
 </div>
 
