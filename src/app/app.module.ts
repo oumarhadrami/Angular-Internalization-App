@@ -20,7 +20,7 @@ import { LanguagePipe } from './pipes/language.pipe';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
+        useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
     }),
@@ -30,7 +30,6 @@ import { LanguagePipe } from './pipes/language.pipe';
 })
 export class AppModule {}
 
-// AOT compilation support
-export function httpTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
